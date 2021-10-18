@@ -1,6 +1,6 @@
 RedFin Housing Prices for Mar vista
 ================
-Section: B Learning Team: 8 Students: Alex MarMureanu, Caldwell Clarke,
+Section: B Learning Team: 8 Students: Alex Marmureanu, Caldwell Clarke,
 Lyle Seebeck, Kelly Li, Joaquin Trucco
 
 ##### Mount up
@@ -160,6 +160,10 @@ stargazer(lm_prob3 ,single.row = TRUE, type = "text")
     ## ===============================================
     ## Note:               *p<0.1; **p<0.05; ***p<0.01
 
+
+
+-   When we control for beds and baths, we do not see the coefficient for square feet change by very much (682 to 653). Furthermore, neither the coefficient for beds or the coefficient for baths are statistically significant at a 95% level (with beds being closer at 93%). From this, we would infer that the square footage is itself a reliable predictor of price regardless of variations in the number of beds and baths. 
+
 -   According to the information of regression 3, the coefficient of
     BEDS is -6.1205228^{4}, meaning that for each additional bedroom,
     the price of the house decreases by -6.1205228^{4} dollars and the
@@ -202,6 +206,14 @@ cor(HOUSES$SQUARE.FEET, HOUSES$LOT.SIZE, use = "complete.obs")
 
 -   From the correlation tests above, we found that lot size is
     positively correlated with Price, Beds, Baths, and Square Feet.
+    
+    
+
+-   We might expect that multi-family homes such as condos and townhouses do not see as strong of a correlation between lot sizes and price. 
+Thinking about price from an aggregate perspective (i.e. all of the condo prices combined), we would expect the price per lot size to be much higher since apartments are more frequently stacked on top of each other. 
+
+-   On the other hand, from an individual family apartment perspective, we might see much lower prices relative to lot size (because one small apartment in a massive condo complex would fetch a very low price as compared to a mansion.  
+
 
 #### Problem 5
 
@@ -247,6 +259,11 @@ stargazer(Regression1,Regression2 ,single.row = TRUE, type = "text")
     ## F Statistic             153.561*** (df = 6; 314)           142.873*** (df = 9; 255)      
     ## =========================================================================================
     ## Note:                                                         *p<0.1; **p<0.05; ***p<0.01
+
+
+-   Most of the variation is explained by square feet, for when run as the only regression variable its R^2 is 70%. 
+Because this is all in one neighborhood, location may be less of a factor. In other words, square feet might not explain 70% of the results if we were looking at housing prices in all of LA or all of California. (In a sense, we could think of location implicitly being controlled for, because all of these houses are so close together). 
+
 
 -   74.6% of the variation in home prices can be explained by our
     selected variables (BEDS, BATHS, CITY, SQUARE.FEET, LOT.SIZE ,
